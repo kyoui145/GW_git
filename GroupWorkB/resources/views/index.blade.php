@@ -8,6 +8,7 @@
 <body>
     <!--ログインボタンを押すとログイン処理を実施し、成功すると書籍一覧画面に遷移する-->
     <form action="/db/login" method="post">
+        @csrf
         ユーザ名：<input type="text" name="username"><br>
         パスワード：<input type="text" name="password"><br>
         <input type="submit" value="ログイン">
