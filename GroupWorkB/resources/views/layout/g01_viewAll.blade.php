@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>アプリ名</h1>
+
+    <!-- ↓セッションの確認。そのうち消す -->
+     <p>{{ ${session('username')} }}</p>
+     <p>{{ ${session('password')} }}</p>
+     <p>{{ ${session('role')} }}</p>
+     <!-- ↑セッションの確認。そのうち消す -->
+
     <table border="1">
         <tr><th>画像</th><th>書籍名</th><th>著者</th><th>画像</th><th><!--詳細ボタンカラム--></th></tr>
         @foreach($records as $record)
