@@ -8,7 +8,7 @@
 <body>
     <h1>アプリ名</h1>
 
-    <!-- ↓セッションの確認。そのうち消す -->
+    <!-- ↓セッションの確認。そのうち消す 
      <p>{{ ${session('username')} }}</p>
      <p>{{ ${session('password')} }}</p>
      <p>{{ ${session('role')} }}</p>
