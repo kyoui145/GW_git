@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;    //利用するモデルの読み込み
+use App\Models\Comment; //利用するモデルの読み込み
+use App\Models\User;    //利用するモデルの読み込み
 
 class TopController extends Controller
 {
@@ -12,12 +15,11 @@ class TopController extends Controller
     public function login(Request $req)
     {
         //Usersテーブルからnameが一致しているか確認する
-        $loginUser = User::where($req-username)->where($req-password)->get();
+        $loginUser = User::where('name',$req->username)->where('password',$req->password)->get();
         
         //一致していなければindex,一致していればg01に遷移する
         if($loginUser->isEmpty())
         {
-            alert('ユーザ情報がありません');
             redirect('/');
         } else {
             //ログインユーザ情報をセッションに保存する
@@ -29,8 +31,8 @@ class TopController extends Controller
 
             //Booksテーブルから変数「records」に全件取得
             $data = [
-                'records' => Book::all();
-            ]
+                'records' => Book::all()
+            ];
 
             return view('layout.g01_viewAll', $data);
         }

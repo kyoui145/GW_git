@@ -8,20 +8,15 @@
 <body>
     <h1>アプリ名</h1>
 
-    <!-- ↓セッションの確認。そのうち消す 
-     <p>{{ ${session('username')} }}</p>
-     <p>{{ ${session('password')} }}</p>
-     <p>{{ ${session('role')} }}</p>
-     <!-- ↑セッションの確認。そのうち消す -->
 
     <table border="1">
-        <tr><th>画像</th><th>書籍名</th><th>著者</th><th>画像</th><th><!--詳細ボタンカラム--></th></tr>
+        <tr><th>画像</th><th>書籍名</th><th>著者</th><th>おすすめ度</th><th><!--詳細ボタンカラム--></th></tr>
         @foreach($records as $record)
         <tr>
             <td>{{ $record->book_url }}</td>
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
-            <td>{{ $record->rating-AVG }}</td>
+            <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
             <td><button onclick="locaton.href='./index.html'"></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する-->
         </tr>
         @endforeach
