@@ -1,0 +1,24 @@
+①ローカルに作業用フォルダを作成
+　D:/GW
+　
+②VisualStudioで①のGWフォルダを開く
+
+③VisualStudioでターミナルから「git init」（テキストP63）
+
+④VisualStudioでターミナルから「git clone https://github.com/kyoui145/GW_git」（テキストP63）
+　→GWフォルダ内に「GW_git」フォルダがクローンされる
+
+⑤VisualStudioで④のGW_gitフォルダを開く
+
+⑥コマンドプロンプトで「D:/GW/GW_git/GroupWorkB」まで移動
+
+//以下、下記のページ参照
+//https://qiita.com/shizen-shin/items/13cb6fc85545c48080e3
+
+⑦コマンドプロンプトで「composer update」を実行
+
+⑧コマンドプロンプトで「copy .env.example .env」を実行
+
+⑨コマンドプロンプトで「php artisan key:generate」を実行
+
+⑩自分のプロジェクトから「/database/database.sqlite」をクローンしたプロジェクトにコピーする

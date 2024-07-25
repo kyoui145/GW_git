@@ -1,0 +1,51 @@
+//*********マイグレーションファイル************/
+①マイグレーションファイルをプロジェクトの「/database/migration」フォルダ以下にコピーする
+・0001_01_01_000000_create_users_table.php
+・2024_07_25_010557_create_books_table.php
+・2024_07_25_010608_create_comments_table.php
+
+②phpMyAdminにrootユーザでログイン
+
+③データベース「GroupWorkB_DB」を作成
+
+④ユーザを作成
+　ユーザ名：GWB_user
+　パスワード:GWB_userpass
+　
+⑤④のユーザに権限付与（「GroupWorkB_DB」の全権限）
+
+⑥「.env」の22~27行目を以下の通りに修正
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=GroupWorkB_DB
+DB_USERNAME=GWB_user
+DB_PASSWORD=GWB_userpass
+
+⑦VisualStudioのターミナルで
+　・「D:\GW\GW_git\GroupWorkB」に移動
+　・php artisan migrate --path=/database/migrations/0001_01_01_000000_create_users_table.php
+　・php artisan migrate --path=/database/migrations/2024_07_25_010557_create_books_table.php
+　・php artisan migrate
+　
+⑧phpMyAdminで確認
+
+（マイグレーションをやり直す場合：「php artisan migrate:reset」）
+
+//*********シーダーファイル************/
+①シーダーファイルをプロジェクトの「/database/seeders」フォルダ以下にコピーする
+・４ファイル
+
+②VisualStudioのターミナルで
+　・「D:\GW\GW_git\GroupWorkB」に移動
+　・php artisan db:seed --class="UsersTableSeeder"
+　・php artisan db:seed --class="BooksTableSeeder"
+　・php artisan db:seed --class="CommentsTableSeeder"
+　
+③phpMyAdminで確認
+　
+　
+
+//*********モデルの修正************/
+①モデルファイルをプロジェクトの「/app/models」フォルダ以下にコピーする
+・３ファイル
