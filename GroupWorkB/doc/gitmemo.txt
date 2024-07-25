@@ -1,0 +1,21 @@
+①github上にリモートリポジトリを作成
+　「GW_git」
+　https://github.com/kyoui145/GW_git
+　
+②ローカルに作業用フォルダを作成
+　D:/GW
+　
+③VisualStudioで②のGWフォルダを開く
+
+④VisualStudioでターミナルから「git init」（テキストP63）
+
+⑤VisualStudioでターミナルから「git clone https://github.com/kyoui145/GW_git」（テキストP63）
+　→GWフォルダ内に「GW_git」フォルダがクローンされる
+
+⑥VisualStudioで⑤のGW_gitフォルダを開く
+
+⑦コマンドプロンプトで「D:/GW/GW_git」まで移動
+
+⑧laravelフォルダを作成「composer create-project laravel/laravel GroupWork」
+
+⑨ステージング→コミット→プッシュ（テキストP64~）
