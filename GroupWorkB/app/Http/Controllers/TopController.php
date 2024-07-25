@@ -15,19 +15,20 @@ class TopController extends Controller
     public function login(Request $req)
     {
         //Usersテーブルからnameが一致しているか確認する
-        $loginUser = User::where('name',$req->username)->where('password',$req->password)->get();
+        $loginUser = User::where('name',$req->username)->where('password',$req->password)->first();
         
         //一致していなければindex,一致していればg01に遷移する
-        if($loginUser->isEmpty())
+        if(is_null($loginUser))
         {
-            redirect('/');
+            //redirect('/');
+            return view('index');
         } else {
             //ログインユーザ情報をセッションに保存する
             //Laravelのセッションの使い方（理解していない）https://qiita.com/yutaka_pg/items/f0103c3171b75146c28a
             //https://your-school.jp/laravel-session/631/
-            //$req->session()->put('username', $req-username);
-            //$req->session()->put('password', $req-password);
-            //$req->session()->put('role', $req-role);
+            $req->session()->put('username', $req->username);
+            $req->session()->put('password', $req->password);
+            $req->session()->put('role', $loginUser->role);
 
             //Booksテーブルから変数「records」に全件取得
             $data = [

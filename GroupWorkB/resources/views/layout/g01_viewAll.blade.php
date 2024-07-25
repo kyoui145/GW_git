@@ -1,3 +1,10 @@
+<?php
+    //セッションから情報取得
+    $username = session('username');
+    $password = session('password');
+    $role = session('role');
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,6 +14,11 @@
 </head>
 <body>
     <h1>アプリ名</h1>
+    <!-- ↓セッションの確認。そのうち消す -->
+     <p>{{ $username }}</p>
+     <p>{{ $password }}</p>
+     <p>{{ $role }}</p>
+     <!-- ↑セッションの確認。そのうち消す -->
 
 
     <table border="1">
@@ -17,7 +29,7 @@
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
             <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
-            <td><button onclick="locaton.href='./index.html'"></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する-->
+            <td><button onclick="locaton.href='./index.html'" >詳細</button></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する-->
         </tr>
         @endforeach
 <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
