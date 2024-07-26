@@ -13,14 +13,18 @@
     <title>Document</title>
 </head>
 <body>
-    ISBNコード入力<input type="text">
-    <button>ISBN検索</button><br>
-    <table>
-        <tr><th>書籍名入力</th><td><input type="text" name="kari1"></td></tr>
-        <tr><th>著者名入力</th><td><input type="text" name="kari2"></td></tr>
-        <tr><th>出版社入力</th><td><input type="text" name="kari3"></td></tr>
-    </table>
-    <a href="">登録確認</a>
+    <form action="/layout/registConfirm" method="post">
+        @csrf
+        ISBNコード入力<input type="text" name="isbn">
+        <button>ISBN検索</button><br>
+        <input type="hidden" name="picture"><!-- 画像表示はしないが、ISBN検索をした場合画像のパラメータは取得する（g22では表示する） -->
+        <table>
+            <tr><th>書籍名入力</th><td><input type="text" name="bookName"></td></tr>
+            <tr><th>著者名入力</th><td><input type="text" name="authorName"></td></tr>
+            <tr><th>出版社入力</th><td><input type="text" name="publisher"></td></tr>
+        </table>
+        <input type="submit" value="登録確認">
+    </form>
     <a href="/layout/returnG01">戻る</a>
 </body>
 </html>

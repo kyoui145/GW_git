@@ -59,7 +59,22 @@ class TopController extends Controller
         return view('layout.g21_addBook');
     }
 
-    //　""→g01 画面遷移処理
+    //g21→g22遷移処理
+    public function registConfirm(Request $req)
+    {
+        //画面から登録用のデータを取得する
+        $data = [
+            'isbn' => $req->isbn,               //ISBN番号      Books:isbn
+            'picture' => $req->picture,         //画像URL       Books:book_url
+            'bookName' => $req->bookName,       //書籍名        Books:title
+            'authorName' => $req->authorName,   //著者名        Books:authoe
+            'publisher' => $req->publisher      //出版社        Books:publisher
+        ];
+
+        return view('layout.g22_addBookConf', $data);
+    }
+
+    //　""→g01 画面遷移処理(戻る)
     public function returnG01(Request $req)
     {
         //Booksテーブルから変数「records」に全件取得
@@ -68,6 +83,36 @@ class TopController extends Controller
         ];
 
         return view('layout.g01_viewAll', $data);
+    }
+    
+    //　""→g21 画面遷移処理(戻る)
+    public function returnG21(Request $req)
+    {
+        return view('layout.g21_addBook');
+    }
+
+    //g22→g01 登録処理
+    public function store(Request $req){
+        $book = new Book(); //Booksモデルのインスタンスを作成
+
+        //フォームのデータをプロパティに代入
+        //3項演算子でnull対策
+        $book->title = $req->bookName != "" ? $req->bookName;
+        $book->author = $req->authorName;
+        $book->publisher = $req->publisher;
+        $book->ISBN = $req->isbn;
+        $book->book_url = $req->picture;
+
+        //テーブルにデータをINSERT
+        $book -> save();
+
+        //Booksテーブルから変数「records」に全件取得
+        $data = [
+            'records' => Book::all()
+        ];
+
+        return view('layout.g01_viewAll', $data);
+
     }
 
 }
