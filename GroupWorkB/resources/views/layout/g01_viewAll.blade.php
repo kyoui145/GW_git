@@ -29,10 +29,13 @@
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
             <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
-            <td><button onclick="locaton.href='./index.html'" >詳細</button></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する-->
+            <td><a href="">詳細</a></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する-->
         </tr>
         @endforeach
-<!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
     </table>
+    <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
+    @if ($role === 2)
+        <br><a href="">新規登録</a>
+    @endif
 </body>
 </html>
