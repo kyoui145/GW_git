@@ -64,7 +64,7 @@ class TopController extends Controller
     {
         //Booksテーブルから変数「records」に全件取得
         $data = [
-            'records' => Book::all()
+            'records' => Book::where('id',$id)->first()
         ];
 
         return view('layout.g01_viewAll', $data);

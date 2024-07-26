@@ -89,7 +89,7 @@
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
             <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
-            <td><a href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する　　参考：https://qiita.com/kamome_susume/items/10f6774329ac289b7fbe-->
+            <td><a href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> <!--aタグはＧＥＴメソッドしか無理っぽい（idがＵＲＬに表示される）　　参考：https://note.com/liber_grp/n/n658fa8234519-->
         </tr>
         @endforeach
     </table>
