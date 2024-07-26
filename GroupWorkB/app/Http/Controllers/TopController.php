@@ -44,12 +44,17 @@ class TopController extends Controller
     public function bookDetail($id)
     {
         //Booksテーブルから変数「records」にidを条件1件取得
-        $data = [
-            'records' => Book::where('id',$id)->first()
-        ];
+        $record = Book::where('id', $id)
+                        ->where('title', $title)
+                        ->where('author', $author)
+                        ->where('publisher', $publisher)
+                        ->where('ISBN', $ISBN)
+                        //->where('created_at', $created_at)
+                        ->first();
+        return view('layout.g02_viewDetail', [
+            'record'=>$record,
+        ]);
 
-
-        return view('layout.g02_viewDetail');
     }
 
 

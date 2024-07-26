@@ -110,7 +110,14 @@
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
             <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
-            <td><a class="button-link" href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> <!--aタグはＧＥＴメソッドしか無理っぽい（idがＵＲＬに表示される）　　参考：https://note.com/liber_grp/n/n658fa8234519-->
+            <td><a href="{{ route('bookDetail', [
+                'id' => $record->id, 
+                'title' => $record->title,
+                'author' => $record->author, 
+                'publisher' => $record->publisher,
+                'ISBN' => $record->ISBN,
+                ]) }}">詳細</a></td>
+            <td><a class="button-link" href="/layout/bookDetail/{{ $record->id }}">�ڍ�</a></td> <!--aタグはＧＥＴメソッドしか無理っぽい（idがＵＲＬに表示される）　　参考：https://note.com/liber_grp/n/n658fa8234519-->
         </tr>
         @endforeach
     </table>

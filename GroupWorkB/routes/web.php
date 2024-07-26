@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 Route::post('layout/login', [TopController::class, 'login']);   //index→g01　ログイン処理
 
-Route::get('layout/bookDetail/{id}', [TopController::class, 'bookDetail']);   //g01→g02 詳細画面遷移処理
+Route::get('layout/bookDetail/{id}/{title}/{author}/{publisher}/{ISBN}', [TopController::class, 'bookDetail'])->name('bookDetail');   //g01→g02 詳細画面遷移処理
 
 Route::get('layout/registTrans', [TopController::class, 'registTrans']);   //g01→g21 登録画面遷移処理
 
