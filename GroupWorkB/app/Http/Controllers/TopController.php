@@ -43,9 +43,9 @@ class TopController extends Controller
     //g01→g02遷移処理
     public function bookDetail($id)
     {
-        //Booksテーブルから変数「records」にidを条件1件取得
+        //Booksテーブルから変数「records」に全件取得
         $data = [
-            'records' => Book::all()
+            'records' => Book::where('id',$id)->first()
         ];
 
 
@@ -62,10 +62,6 @@ class TopController extends Controller
     //　""→g01 画面遷移処理
     public function returnG01(Request $req)
     {
-        //Booksテーブルから変数「records」に全件取得
-        $data = [
-            'records' => Book::where('id',$id)->first()
-        ];
 
         return view('layout.g01_viewAll', $data);
     }
