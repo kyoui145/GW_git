@@ -21,6 +21,17 @@
        body {
             background-color: #FFFCF1;
         }
+        .button-link {
+            display: inline-block;
+            background-color: #738581; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            padding: 2px 20px; /* パディング */
+            border: none; /* ボーダーなし */
+            border-radius: 5px; /* 角を丸く */
+            text-align: center; /* 中央揃え */
+            text-decoration: none; /* 下線なし */
+            font-size: 16px; /* フォントサイズ */
+        }
     </style>
     <title>Document</title>
 </head>
@@ -51,6 +62,11 @@
                 >
                 </li>
             </ul>
+            <!-- 検索機能 -->
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
             <form class="form-inline mt-2 mt-md-0">
                 <a href="/">ログアウト</a>
             </form>
@@ -94,7 +110,7 @@
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
             <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
-            <td><a href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> <!--aタグはＧＥＴメソッドしか無理っぽい（idがＵＲＬに表示される）　　参考：https://note.com/liber_grp/n/n658fa8234519-->
+            <td><a class="button-link" href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> <!--aタグはＧＥＴメソッドしか無理っぽい（idがＵＲＬに表示される）　　参考：https://note.com/liber_grp/n/n658fa8234519-->
         </tr>
         @endforeach
     </table>
