@@ -62,6 +62,10 @@ class TopController extends Controller
     //　""→g01 画面遷移処理
     public function returnG01(Request $req)
     {
+        //Booksテーブルから変数「records」に全件取得
+        $data = [
+            'records' => Book::all()
+        ];
 
         return view('layout.g01_viewAll', $data);
     }
