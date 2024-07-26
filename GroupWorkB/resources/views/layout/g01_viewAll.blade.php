@@ -35,7 +35,7 @@
     </table>
     <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
     @if ($role === 2)
-        <br><a href="">新規登録</a>
+        <br><a href="/layout/registTrans">新規登録</a>
     @endif
 </body>
 </html>
