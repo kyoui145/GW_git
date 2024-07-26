@@ -97,11 +97,11 @@ class TopController extends Controller
 
         //フォームのデータをプロパティに代入
         //3項演算子でnull対策
-        $book->title = $req->bookName != "" ? $req->bookName;
-        $book->author = $req->authorName;
-        $book->publisher = $req->publisher;
-        $book->ISBN = $req->isbn;
-        $book->book_url = $req->picture;
+        $book->title = $req->bookName != "" ? $req->bookName : "no data";
+        $book->author = $req->authorName != "" ? $req->authorName : "no data";
+        $book->publisher = $req->publisher != "" ? $req->publisher : "no data";
+        $book->ISBN = $req->isbn != "" ? $req->isbn : 1111;
+        $book->book_url = $req->picture != "" ? $req->picture : "no data";
 
         //テーブルにデータをINSERT
         $book -> save();
