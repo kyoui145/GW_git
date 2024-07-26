@@ -89,7 +89,7 @@
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
             <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
-            <td><a href="">詳細</a></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する-->
+            <td><a href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> <!--（仮決め）$record->idから書籍詳細画面に遷移する　　参考：https://qiita.com/kamome_susume/items/10f6774329ac289b7fbe-->
         </tr>
         @endforeach
     </table>

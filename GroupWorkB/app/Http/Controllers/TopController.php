@@ -39,6 +39,18 @@ class TopController extends Controller
         }
 
     }
+    
+    //g01→g02遷移処理
+    public function bookDetail($id)
+    {
+        //Booksテーブルから変数「records」にidを条件1件取得
+        $data = [
+            'records' => Book::all()
+        ];
+
+
+        return view('layout.g02_viewDetail');
+    }
 
 
     //g01→g21遷移処理
