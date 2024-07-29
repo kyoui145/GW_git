@@ -45,29 +45,6 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
-
-        /* 新規登録が、ボタンっぽく見えるCSS */
-        .button-link2 {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 14px;
-            color: #333; /* テキストの色は濃いグレー */
-            background-color: #dcdcdc; /* フラットで控えめなグレー */
-            border: 1px solid #bbb; /* 薄いグレーのボーダー */
-            border-radius: 6px; /* 少し丸みのある角 */
-            text-align: center;
-            text-decoration: none;
-            font-weight: normal; /* 通常のフォントウェイト */
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-        .button-link2:hover {
-            background-color: #c0c0c0; /* ホバー時に少し濃いグレー */
-            border-color: #999; /* ホバー時にボーダーの色も変更 */
-        }
-        .button-link2:active {
-            background-color: #a9a9a9; /* クリック時にさらに濃いグレー */
-            border-color: #666; /* クリック時にボーダーの色も変更 */
-        }
         
         /* テーブルを、画面中央に */
         .table-container {
@@ -120,7 +97,6 @@
                     </li>
                 @endif
             </ul>
-            {{ $username }}
             <form class="form-inline mt-2 mt-md-0">
                 <a href="/">ログアウト</a>
             </form>
@@ -192,9 +168,9 @@
         </tr>
         @endforeach
     </table>
-    <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
+    <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する
     @if ($role === 2)
         <br><a href="/layout/registTrans" class="button-link2">新規登録</a>
-    @endif
+    @endif　ヘッダーに入れたのでコメントアウト-->
 </body>
 </html>
