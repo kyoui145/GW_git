@@ -15,12 +15,6 @@
         body {
             background-color: #FFFCF1;
         }
-        .form-container {
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
     </style>
      <!-- Scripts -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -33,7 +27,6 @@
 </head>
 <form action="/layout/registConfirm" method="post">
     @csrf
-    <div class="form-container">
         <div>
             ISBN13：<input id="isbn" type="text" name="isbn" value="" autofocus>
             <button id="getBookInfo" class="btn btn-default">書籍情報取得</button>
@@ -58,7 +51,6 @@
             サムネイルURI：<input id="book_url" type="text" name="book_url" value="" >
         </div>
         <input type="submit" value="登録確認" crass="btn btn-primary">
-    </div>
 </form>
 <a href="/layout/returnG01">戻る</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 

@@ -8,16 +8,9 @@
         body {
             background-color: #FFFCF1;
         }
-        .form-container {
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
     </style>
 </head>
 <body>
-    <div class="form-container">
     <form action="/layout/g02_viewDetail" method="post">
         @csrf
         <input type="hidden" name="id" value="{{$record->id}}" readonly><br>
@@ -29,6 +22,5 @@
         <a href="layout/g02_viewDetail">書籍詳細へ戻る</a>
 
     </form>
-    </div>
 </body>
 </html>
