@@ -15,7 +15,7 @@
 <body>
     <form action="/layout/regist" method="post">
         @csrf
-        <!-- <img src="{{ $picture }}" alt=""><br> -->
+       
         <table>
             <tr><th>ISBN番号</th><td>{{ $isbn }}</td></tr>
             <tr><th>書籍名：</th><td>{{ $title }}</td></tr>
