@@ -75,7 +75,7 @@
         <br><a href="/layout/returnG01">書籍削除（仮リンク、一覧表示へ戻る）</a><br>
     @endif
 
-    <a href="/layout/returnG01">コメント投稿（仮リンク、一覧表示へ戻る）</a><br>
+    <a href="/layout/g04_createComment">コメント投稿</a><br>
     <a href="/layout/returnG01">戻る</a>
 </body>
 </html>

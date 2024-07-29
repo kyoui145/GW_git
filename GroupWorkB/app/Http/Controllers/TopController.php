@@ -175,23 +175,9 @@ class TopController extends Controller
     }
 
 
-// //コメント投稿
-// public function g04_createComment(Request $req)
-// {
-//     //登録対象のレコードをフォームからのid値を元にモデルに取り出す
-// $
-// $id =$req -> id;
-// $books_id =$req -> books_id;
-// $users_id =$req -> users_id;
-// $data = [
-//    //入力されたオススメ度取得
-//         'rating' => Article::find($id),
-// 　 //入力されたコメント取得
-//         'comment' => Article::find($comment)
-//     ];
-
-//     return view('layout.g04_createComment', $data);
-// }
-
-// }
+ //g02→g04　コメント新規登録処理
+public function postNewComment(Request $req)
+{
+    return view('layout.g04_createComment');
+}
 }
