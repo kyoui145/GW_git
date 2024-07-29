@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+    //セッションから情報取得
+    $username = session('username');
+    $password = session('password');
+    $role = session('role');
+?><!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -35,6 +40,12 @@
         @endforeach
     </table>
     @endif
-<a href="/views/layout/g01_viewAll">戻る</a>
+    <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
+    @if ($role === 2)
+        <br><a href="/layout/returnG01">書籍削除（仮リンク、一覧表示へ戻る）</a><br>
+    @endif
+
+    <a href="/layout/returnG01">コメント投稿（仮リンク、一覧表示へ戻る）</a><br>
+    <a href="/layout/returnG01">戻る</a>
 </body>
 </html>
