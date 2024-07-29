@@ -16,9 +16,16 @@
         body {
             background-color: #FFFCF1;
         }
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
+    <div class="form-container">    
     <form action="/layout/regist" method="post">
         @csrf
        
@@ -40,6 +47,7 @@
         <h2>上記の情報を登録しますか？</h2>
         <input type="submit" value="登録" id="btn1">
     </form>
+    </div>
     <a href="/layout/returnG21">戻る</a>
 </body>
 </html>

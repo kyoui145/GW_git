@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-    <h1>書籍詳細画面</h1>
+    <h1>書籍詳細画面</h1><br>
     <!-- 後で適切な画像に差し替え↓ -->
     <div class="image-container">
     <?php

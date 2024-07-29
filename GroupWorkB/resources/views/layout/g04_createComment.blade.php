@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-<h1>コメント編集画面</h1>
+<h1>コメント編集画面</h1><br>
     <div class="form-container">
     <form action="/layout/g04_createComment" method="post">
         @csrf
