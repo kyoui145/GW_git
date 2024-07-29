@@ -7,11 +7,24 @@
     <style>
         body {
             background-color: #FFFCF1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     <h1>コメント編集画面</h1>
+    <div class="form-container">
     <form action="/layout/editComments" method="post">
         @csrf
         <div><!-- おすすめ度はプルダウンで表示し、初期値は元のデータとする -->
@@ -33,5 +46,6 @@
             <input type="hidden" name="books_id" id="books_id" value="{{ $comment->books_id }}">    <!--Commentのbook_idは非表示で送信する-->
         <input type="submit" value="更新">
     </form>
+    </div>
 </body>
 </html>
