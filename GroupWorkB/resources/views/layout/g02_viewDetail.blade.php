@@ -21,6 +21,9 @@
             justify-content: center; /* 左右中央揃え */
             width: 100%;
         }
+        h1 {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
