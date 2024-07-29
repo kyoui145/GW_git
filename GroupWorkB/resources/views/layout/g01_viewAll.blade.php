@@ -127,7 +127,7 @@
                     if($comments->isEmpty()){
                         $AVGrating = 0;
                     }else{
-                        $AVGrating = $comments->avg('rating');
+                        $AVGrating = number_format($comments->avg('rating'), 2);    //小数点第2位まで表示
                     }
                 ?>
                 {{ $AVGrating }}
