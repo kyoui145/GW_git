@@ -1,5 +1,3 @@
-<a href="/layout/g04_createComment">コメント投稿</a><br>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -13,16 +11,26 @@
     </style>
 </head>
 <body>
-    <h1>コメント編集画面</h1>
+<h1>コメント編集画面</h1>
     <form action="/layout/g04_createComment" method="post">
         @csrf
         <div>
-            
-            <label for="rating">オススメ度</label>
-            <input type="text" name="rating" id="rating">
+            <!-- オススメ度のドロップダウン（プルダウン） -->
+            <label for="rating" required>オススメ度</label>
+            <select name="rating" id="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
         </div>
-            コメント<textarea name="comment" rows="3" required>AAA</textarea><br>
-            <input type="submit" value="投稿" class="btn btn-primary">
+        <div>
+            <label for="comment">コメント</label>
+            <textarea name="comment" id="comment" rows="3" required placeholder="コメントを入力してください"></textarea>
+        </div>
+        <br>
+        <input type="submit" value="投稿" class="btn btn-primary">
     </form>
 </body>
 </html>
