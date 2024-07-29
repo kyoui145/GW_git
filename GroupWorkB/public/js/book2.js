@@ -9,7 +9,7 @@ $(function() {
                 alert("データが見つかりません");
             } else {
                 if( data[0].summary.cover == "" ){
-                    $("#thumbnail").html('<img src={{asset("img/noimagePic")}}  alt="gazou"/>');
+                    $("#thumbnail").html('<img src="' + noImagePicUrl + '" alt="gazou"/>');
                 } else {
                     $("#thumbnail").html('<img src=\"' + data[0].summary.cover + '\" style=\"border:solid 1px #000000\" />');
                 }
