@@ -1,30 +1,28 @@
+<a href="/layout/g04_createComment">コメント投稿</a><br>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>以下のデータを登録しました</title>
+    <title>コメント編集画面</title>
     <style>
         body {
             background-color: #FFFCF1;
         }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-    <h1>以下のデータを登録しました</h1>
-    <table class="table">
-        <tr>
-            <th>オススメ度</th>
-            <th>投稿記事</th>
-        </tr>
-        <tr>
-            <td>{{ $rating }}</td>
-            <td>{{ $comment }}</td>
-        </tr>
-    </table>
-    <br>
-    <a href="/views/layout/g02_viewDetail">戻る</a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <h1>コメント編集画面</h1>
+    <form action="/layout/g04_createComment" method="post">
+        @csrf
+        <div>
+            
+            <label for="rating">オススメ度</label>
+            <input type="text" name="rating" id="rating">
+        </div>
+            コメント<textarea name="comment" rows="3" required>AAA</textarea><br>
+            <input type="submit" value="投稿" class="btn btn-primary">
+    </form>
 </body>
 </html>
