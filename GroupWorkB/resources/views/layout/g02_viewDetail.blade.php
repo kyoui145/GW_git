@@ -45,7 +45,7 @@
     <pre style="font-size:30px">平均オススメ度　　ratingAVG　　　　　　　{{ $avgRating ? number_format($avgRating, 2) : 'ー' }}</pre ><hr>
     <br><br>
     <h1>コメント一覧</h1>
-    {{$records->links()}}
+   
 
     @if($comments->isEmpty())
         <p>まだコメントはありません。</p>
