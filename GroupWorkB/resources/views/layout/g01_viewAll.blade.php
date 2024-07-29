@@ -106,7 +106,11 @@
         <tr><th>画像</th><th>書籍名</th><th>著者</th><th>おすすめ度</th><th><!--詳細ボタンカラム--></th></tr>
         @foreach($records as $record)
         <tr>
-            <td>{{ $record->book_url }}</td>
+            <td><?php
+                    // HTMLで画像を表示
+                    echo '<img src="' . htmlspecialchars($record->book_url) . '" alt="Image">';
+                ?>
+            </td>
             <td>{{ $record->title }}</td>
             <td>{{ $record->author }}</td>
             <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
