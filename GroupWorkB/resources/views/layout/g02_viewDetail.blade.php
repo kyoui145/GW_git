@@ -24,7 +24,7 @@
     <pre style="font-size:30px">出版社　　　　　　publisher　　　　　　　{{ $record->publisher }}</pre ><hr>
     <pre style="font-size:30px">ISBNコード　　　　ISBN　　　　　　　　 　{{ $record->ISBN }}</pre ><hr>
     <pre style="font-size:30px">登録日時　　　　　Registered Date　　　　{{ $record->updated_at }}</pre ><hr>
-    <pre style="font-size:30px">平均オススメ度　　ratingAVG　　　　　　　(ここに平均おススメ度を表示)</pre ><hr>
+    <pre style="font-size:30px">平均オススメ度　　ratingAVG　　　　　　　{{ $avgRating ? number_format($avgRating, 2) : 'ー' }}</pre ><hr>
     <br><br>
     <h1>コメント一覧</h1>
     <table border="1">

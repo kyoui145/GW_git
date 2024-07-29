@@ -53,10 +53,13 @@ class TopController extends Controller
                         ->first();
         // 本に関連するコメントを取得
         $comments = $record->comments;
+        // 平均オススメ度を計算
+    $avgRating = $comments->avg('rating');
         
         return view('layout.g02_viewDetail', [
             'record'=>$record,
             'comments' => $comments,
+            'avgRating' => $avgRating,
         ]);
 
     }
