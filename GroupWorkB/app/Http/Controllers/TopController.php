@@ -102,26 +102,27 @@ class TopController extends Controller
 
     //g22→g01 登録処理
     public function store(Request $req){
-        $book = new Book(); //Booksモデルのインスタンスを作成
+        
+ $book = new Book(); //Booksモデルのインスタンスを作成
 
-        //フォームのデータをプロパティに代入
-        //3項演算子でnull対策
-        $book->title = $req->bookName != "" ? $req->bookName : "no data";
-        $book->author = $req->authorName != "" ? $req->authorName : "no data";
-        $book->publisher = $req->publisher != "" ? $req->publisher : "no data";
-        $book->ISBN = $req->isbn != "" ? $req->isbn : 1111;
-        $book->book_url = $req->picture != "" ? $req->picture : "no data";
+ //フォームのデータをプロパティに代入
+ //3項演算子でnull対策
+ $book->title = $req->title != "" ? $req->title : "no data";
+ $book->author = $req->author != "" ? $req->author : "no data";
+ $book->publisher = $req->publisher != "" ? $req->publisher : "no data";
+ $book->ISBN = $req->isbn != "" ? $req->isbn : 1111;
+ $book->book_url = $req->book_url != "" ? $req->book_url : "no data";
 
-        //テーブルにデータをINSERT
-        $book -> save();
+ //テーブルにデータをINSERT
+ $book -> save();
 
-        //Booksテーブルから変数「records」に全件取得
-        $data = [
-            'records' => Book::all()
-        ];
+ //Booksテーブルから変数「records」に全件取得
+ $data = [
+     'records' => Book::all()
+ ];
 
-        return view('layout.g01_viewAll', $data);
+ return view('layout.g01_viewAll', $data);
 
-    }
+}
 
 }
