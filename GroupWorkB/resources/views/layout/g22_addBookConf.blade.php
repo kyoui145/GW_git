@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="{{ asset('/js/touroku.js') }}" defer></script>
     <style>
         body {
             background-color: #FFFCF1;
@@ -37,7 +38,7 @@
         <input type="hidden" name="book_url" id="book_url" value="{{ $book_url }}">
         <!--↑はデータをBOOkSテーブルにデータを登録する用（hiddenなので非表示）-->
         <h2>上記の情報を登録しますか？</h2>
-        <input type="submit" value="登録">
+        <input type="submit" value="登録" id="btn1">
     </form>
     <a href="/layout/returnG21">戻る</a>
 </body>
