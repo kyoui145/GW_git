@@ -18,7 +18,7 @@
         <img src="{{ $picture }}" alt=""><br>
         <table>
             <tr><th>ISBN番号</th><td>{{ $isbn }}</td></tr>
-            <tr><th>書籍名：</th><td>{{ $input['title'] }}</td></tr>
+            <tr><th>書籍名：</th><td>{{ $title }}</td></tr>
             <tr><th>著者名：</th><td>{{ $author }}</td></tr>
             <tr><th>出版社：</th><td>{{ $publisher }}</td></tr>
         </table>
