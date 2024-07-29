@@ -150,28 +150,63 @@ class TopController extends Controller
 
     }
 
-    //g02→g03 コメント投稿用 フォーム表示
+
+    //g02→g03遷移処理
     public function g03_editComment($id)
     {
-        /*
-        $id =$req -> id;
-    $books_id =$req -> books_id;
-    $users_id =$req -> users_id;
-    $data = [
-    //入力されたオススメ度取得
-            'rating' => Article::find($id),
-    　 //入力されたコメント取得
-            'comment' => Article::find($comment)
+        //Commentsテーブルから変数「comment」に１件取得
+        $data = [
+            'comment' => Comment::where('id', $id)->first()
         ];
-        */
-
-
-    //Commentsテーブルから変数「comment」に１件取得
-    $data = [
-        'comment' => Comment::where('id', $id)->first()
-    ];
 
         return view('layout.g03_editComment', $data);
+    }
+
+    //g03→02 コメント編集処理
+    public function editComments(Request $req)
+    {
+        //更新対象のレコードを取得
+        $comment = Comment::find($req->id);
+        //フォームのデータをモデルに代入（上書き）
+        $comment->rating = $req->rating;
+        $comment->comment = $req->comment;
+        //モデルのデータをテーブルに上書き
+        $comment->save();
+
+        //g02画面表示処理（ほぼg01→g02遷移処理）
+        $record = Book::where('id', $req->books_id)->first();
+        $comments = $record->comments;
+
+         // ソート条件を取得
+        $sort = request('sort');
+
+        // コメントをソート
+        switch ($sort) {
+            case 'rating_desc':
+                $comments = $record->comments()->orderBy('rating', 'desc')->get();
+                break;
+            case 'rating_asc':
+                $comments = $record->comments()->orderBy('rating', 'asc')->get();
+                break;
+            case 'date_desc':
+                $comments = $record->comments()->orderBy('created_at', 'desc')->get();
+                break;
+            case 'date_asc':
+                $comments = $record->comments()->orderBy('created_at', 'asc')->get();
+                break;
+            default:
+                $comments = $record->comments()->get();
+                break;
+        }
+
+            // 平均オススメ度を計算
+        $avgRating = $comments->avg('rating');
+            
+        return view('layout.g02_viewDetail', [
+            'record'=>$record,
+            'comments' => $comments,
+            'avgRating' => $avgRating,
+        ]);
     }
 
 

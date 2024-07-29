@@ -12,18 +12,26 @@
 </head>
 <body>
     <h1>コメント編集画面</h1>
-    <form action="/layout/g04_createComment" method="post">
+    <form action="/layout/editComments" method="post">
         @csrf
-        <div>
-            <label for="rating">オススメ度</label>
-            <input type="text" name="rating" id="rating" value="{{ $comment->rating }}">
+        <div><!-- おすすめ度はプルダウンで表示し、初期値は元のデータとする -->
+            おすすめ度
+            <select name="rating" value="rating">
+            @foreach([0,1,2,3,4,5] as $value)
+                @if ($value == $comment->rating)
+                    <option value="{{ $value }}" selected>{{ $value }}</option>
+                @else
+                    <option value="{{ $value }}">{{ $value }}</option>
+                @endif
+            @endforeach
+            </select>
         </div>
-        
-        <div>
-            コメント<textarea name="comment" rows="3" required>{{ $comment -> comment}}</textarea><br>
-            </div>
-        
-            <input type="submit" value="投稿" class="btn btn-primary">
+        <div><!-- コメントはテキストエリア「、初期値は元のデータとする -->
+            コメント<textarea name="comment" id="comment" rows="3" required>{{ $comment -> comment}}</textarea><br>
+        </div>
+            <input type="hidden" name="id" id="id" value="{{ $comment->id }}">    <!--Commentのidは非表示で送信する-->
+            <input type="hidden" name="books_id" id="books_id" value="{{ $comment->books_id }}">    <!--Commentのbook_idは非表示で送信する-->
+        <input type="submit" value="更新">
     </form>
 </body>
 </html>
