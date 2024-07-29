@@ -77,7 +77,7 @@ class TopController extends Controller
 
         // 平均オススメ度を計算
     $avgRating = $comments->avg('rating');
-    $data= ['records'=>Article::paginate(5)];
+    $data= ['record'=>Article::paginate(5)];
         return view('layout.g02_viewDetail', [
             'record'=>$record,
             'comments' => $comments,
