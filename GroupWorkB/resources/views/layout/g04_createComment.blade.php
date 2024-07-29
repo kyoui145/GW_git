@@ -18,6 +18,7 @@
             <!-- オススメ度のドロップダウン（プルダウン） -->
             <label for="rating" required>オススメ度</label>
             <select name="rating" id="rating">
+                <option value="1">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
