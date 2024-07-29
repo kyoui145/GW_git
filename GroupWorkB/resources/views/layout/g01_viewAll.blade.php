@@ -86,11 +86,6 @@
             <!-- 追加コード：ナビゲーションと登録ボタンを実装する -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link">
-                        {{ $username }}<span class="sr-only">(current)</span>
-                    </a>
-                </li>
                 @if ($role === 2)
                     <li class="nav-item">
                         <a class="nav-link button-link2" href="/layout/registTrans">新規登録</a>
@@ -98,6 +93,7 @@
                 @endif
             </ul>
             <form class="form-inline mt-2 mt-md-0">
+                <span class="navbar-text mr-2">{{ $username }}</span>
                 <a href="/">ログアウト</a>
             </form>
             </div>
