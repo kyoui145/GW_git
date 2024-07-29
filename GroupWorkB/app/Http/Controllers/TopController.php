@@ -78,8 +78,8 @@ class TopController extends Controller
         $data = [
             'isbn' => $req->isbn,               //ISBN番号      Books:isbn
             'picture' => $req->picture,         //画像URL       Books:book_url
-            'bookName' => $req->bookName,       //書籍名        Books:title
-            'authorName' => $req->authorName,   //著者名        Books:authoe
+            'title' => $req->title,       //書籍名        Books:title
+            'author' => $req->author,   //著者名        Books:authoe
             'publisher' => $req->publisher      //出版社        Books:publisher
         ];
 
