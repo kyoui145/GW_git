@@ -10,15 +10,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>書籍詳細画面</title>
     <style>
+        body {
+            background-color: #FFFCF1;
+        }
         tr {
             font-size: 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center; /* 左右中央揃え */
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <h1>書籍詳細画面</h1>
     <!-- 後で適切な画像に差し替え↓ -->
-    <img src="{{ asset('img/noimagePic.png') }}" alt="NOIMAGE画像" >
+    <div class="image-container">
+     <img src="{{ asset('img/noimagePic.png') }}" alt="NOIMAGE画像" >
+    </div>
     <pre style="font-size:30px">書籍名　　　　　　title　　　　　　　　　{{ $record->title }}</pre ><hr>
     <pre style="font-size:30px">著者名　　　　　　author　　　　　　 　　{{ $record->author }}</pre ><hr>
     <pre style="font-size:30px">出版社　　　　　　publisher　　　　　　　{{ $record->publisher }}</pre ><hr>
