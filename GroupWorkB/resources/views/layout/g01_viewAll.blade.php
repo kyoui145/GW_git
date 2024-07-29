@@ -90,6 +90,9 @@
                     <li class="nav-item">
                         <a class="nav-link button-link2" href="/layout/registTrans">新規登録</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/layout/returnG01">書籍削除（仮リンク、一覧表示へ戻る）</a>
+                    </li>
                 @endif
             </ul>
             <form class="form-inline mt-2 mt-md-0">
