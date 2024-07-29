@@ -62,11 +62,11 @@
                 >
                 </li>
             </ul>
-            <!-- 検索機能 -->
+            <!-- 検索機能 
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            </form>-->
             <form class="form-inline mt-2 mt-md-0">
                 <a href="/">ログアウト</a>
             </form>
