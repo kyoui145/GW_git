@@ -106,7 +106,8 @@
         <tr><th>画像</th><th>書籍名</th><th>著者</th><th>おすすめ度</th><th><!--詳細ボタンカラム--></th></tr>
         @foreach($records as $record)
         <tr>
-            <td><?php
+            <td><!--画像-->
+                <?php
                     // HTMLで画像を表示
                     if($record->book_url === "no data"){
                         echo '<img src="' . asset('img/noimagePic.png') . '" alt="NOIMAGE画像">';
@@ -116,9 +117,21 @@
                     
                 ?>
             </td>
-            <td>{{ $record->title }}</td>
-            <td>{{ $record->author }}</td>
-            <td></td><!--おすすめ度の平均の表示方法がわからないのでいったんなし-->
+            <td>{{ $record->title }}</td><!--書籍名-->
+            <td>{{ $record->author }}</td><!--著者-->
+            <td><!--おすすめ度（平均値）-->
+                <?php
+                    // おすすめ平均値を出すためのphp処理
+                    $comments = $record->comments;
+                    $AVGrating = 0;
+                    if($comments->isEmpty()){
+                        $AVGrating = 0;
+                    }else{
+                        $AVGrating = $comments->avg('rating');
+                    }
+                ?>
+                {{ $AVGrating }}
+            </td>
             <td><a href="{{ route('bookDetail', [
                 'id' => $record->id, 
                 'title' => $record->title,
