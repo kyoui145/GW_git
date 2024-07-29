@@ -110,18 +110,17 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" >
-                    {{ $username }}<span class="sr-only">(current)</span></a>
+                    <a class="nav-link">
+                        {{ $username }}<span class="sr-only">(current)</span>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/layout/registTrans">新規登録</a>
-                </li>
+                @if ($role === 2)
+                    <li class="nav-item">
+                        <a class="nav-link button-link2" href="/layout/registTrans">新規登録</a>
+                    </li>
+                @endif
             </ul>
-            <!-- 検索機能 
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>-->
+            {{ $username }}
             <form class="form-inline mt-2 mt-md-0">
                 <a href="/">ログアウト</a>
             </form>
