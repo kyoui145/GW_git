@@ -53,6 +53,28 @@ class TopController extends Controller
                         ->first();
         // 本に関連するコメントを取得
         $comments = $record->comments;
+         // ソート条件を取得
+    $sort = request('sort');
+
+    // コメントをソート
+    switch ($sort) {
+        case 'rating_desc':
+            $comments = $record->comments()->orderBy('rating', 'desc')->get();
+            break;
+        case 'rating_asc':
+            $comments = $record->comments()->orderBy('rating', 'asc')->get();
+            break;
+        case 'date_desc':
+            $comments = $record->comments()->orderBy('created_at', 'desc')->get();
+            break;
+        case 'date_asc':
+            $comments = $record->comments()->orderBy('created_at', 'asc')->get();
+            break;
+        default:
+            $comments = $record->comments()->get();
+            break;
+    }
+
         // 平均オススメ度を計算
     $avgRating = $comments->avg('rating');
         
