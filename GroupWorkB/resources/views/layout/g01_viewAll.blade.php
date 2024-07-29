@@ -109,7 +109,7 @@
             <td><?php
                     // HTMLで画像を表示
                     if($record->book_url === "no data"){
-                        echo '<img src="{{ asset(.img/noimagePic.png.) }}" alt="NOIMAGE画像" >';
+                        echo '<img src="' . asset('img/noimagePic.png') . '" alt="NOIMAGE画像">';
                     }else{
                         echo '<img src="' . htmlspecialchars($record->book_url) . '" alt="Image">';
                     }
