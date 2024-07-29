@@ -27,7 +27,15 @@
     <h1>書籍詳細画面</h1>
     <!-- 後で適切な画像に差し替え↓ -->
     <div class="image-container">
-     <img src="{{ asset('img/noimagePic.png') }}" alt="NOIMAGE画像" >
+    <?php
+                    // HTMLで画像を表示
+                    if($record->book_url === "no data"){
+                        echo '<img src="' . asset('img/noimagePic.png') . '" alt="NOIMAGE画像">';
+                    }else{
+                        echo '<img src="' . htmlspecialchars($record->book_url) . '" alt="Image">';
+                    }
+                    
+                ?>
     </div>
     <pre style="font-size:30px">書籍名　　　　　　title　　　　　　　　　{{ $record->title }}</pre ><hr>
     <pre style="font-size:30px">著者名　　　　　　author　　　　　　 　　{{ $record->author }}</pre ><hr>
