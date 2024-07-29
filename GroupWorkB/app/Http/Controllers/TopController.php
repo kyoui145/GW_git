@@ -77,7 +77,7 @@ class TopController extends Controller
         //画面から登録用のデータを取得する
         $data = [
             'isbn' => $req->isbn,               //ISBN番号      Books:isbn
-            'picture' => $req->picture,         //画像URL       Books:book_url
+            'book_url' => $req->book_url,         //画像URL       Books:book_url
             'title' => $req->title,       //書籍名        Books:title
             'author' => $req->author,   //著者名        Books:authoe
             'publisher' => $req->publisher      //出版社        Books:publisher
