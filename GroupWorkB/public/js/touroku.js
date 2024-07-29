@@ -1,5 +1,5 @@
 const btn1 = document.getElementById('btn1');
 
 btn1.addEventListener('click', () => {
-  alert('ボタン１がクリックされました！');
+  alert('新規登録完了しました');
 });
