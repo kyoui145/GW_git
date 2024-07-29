@@ -41,7 +41,7 @@ class TopController extends Controller
     }
     
     //g01→g02遷移処理
-    public function bookDetail($id)
+    public function bookDetail($id,$title,$author,$publisher,$ISBN)
     {
         //Booksテーブルから変数「records」にidを条件1件取得
         $record = Book::where('id', $id)
