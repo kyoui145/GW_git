@@ -93,8 +93,8 @@
     <header>
         <!-- 追加コード：ナビゲーションバーの外枠を実装する -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <!-- 追加コード：ブランドとメニュー開閉ボタンを実装する -->
-                <a class="navbar-brand" >図書館管理システム B</a>
+        <!-- 追加コード：ブランドとメニュー開閉ボタンを実装する -->
+            <a class="navbar-brand" >図書館管理システム B</a>
             <button
             class="navbar-toggler"
             type="button"
@@ -110,9 +110,11 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                <a class="nav-link" >
-                {{ $username }}<span class="sr-only">(current)</span></a
-                >
+                    <a class="nav-link" >
+                    {{ $username }}<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/layout/registTrans">新規登録</a>
                 </li>
             </ul>
             <!-- 検索機能 
