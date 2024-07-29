@@ -11,6 +11,7 @@
     </style>
 </head>
 <body>
+    <div class="form-container">
     <form action="/layout/g02_viewDetail" method="post">
         @csrf
         <input type="hidden" name="id" value="{{$record->id}}" readonly><br>
@@ -22,6 +23,6 @@
         <a href="layout/g02_viewDetail">書籍詳細へ戻る</a>
 
     </form>
-    
+    </div>
 </body>
 </html>
