@@ -51,8 +51,12 @@ class TopController extends Controller
                         ->where('ISBN', $ISBN)
                         //->where('created_at', $created_at)
                         ->first();
+        // 本に関連するコメントを取得
+        $comments = $record->comments;
+        
         return view('layout.g02_viewDetail', [
             'record'=>$record,
+            'comments' => $comments,
         ]);
 
     }

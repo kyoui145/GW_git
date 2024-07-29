@@ -9,6 +9,6 @@ class Book extends Model
 {
     use HasFactory;
     public function comments(){
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class,'books_id');
     }
 }

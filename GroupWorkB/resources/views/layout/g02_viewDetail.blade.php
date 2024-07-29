@@ -24,10 +24,12 @@
     <h1>コメント一覧</h1>
     <table border="1">
     <tr><th>オススメ度</th><th>コメント</th></tr><br>
-    <tr>
-        <td>オススメ度はここ</td>
-        <td>コメントはここ</td>
-    </tr>
+    @foreach($comments as $comment)
+        <tr>
+            <td>{{ $comment->rating }}</td>
+            <td>{{ $comment->comment }}</td>
+        </tr>
+        @endforeach
 </table>
 <a href="/views/layout/g01_viewAll">戻る</a>
 </body>

@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
     public function comments(){
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class,'users_id');
     }
 
     /**
