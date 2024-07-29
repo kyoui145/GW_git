@@ -22,5 +22,5 @@ Route::get('layout/returnG01', [TopController::class, 'returnG01']);   //g01画�
 
 Route::get('layout/returnG21', [TopController::class, 'returnG21']);   //g21画面に戻る遷移処理
 
-Route::post('layout/g03_editComment', [TopController::class, 'g03_editComment']);   //g02→g03 コメント編集画面遷移処理
+Route::get('layout/g03_editComment/{id}', [TopController::class, 'g03_editComment']);   //g02→g03 コメント編集画面遷移処理
 Route::post('layout/g04_createComment', [TopController::class, 'g04_createComment']);   //g02→g04 コメント新規登録画面遷移処理

@@ -149,22 +149,30 @@ class TopController extends Controller
     return view('layout.g01_viewAll', $data);
 
     }
-}
-//コメント投稿用 フォーム表示
-// public function g03_editComment(Request $req)
-// {
-//     $id =$req -> id;
-// $books_id =$req -> books_id;
-// $users_id =$req -> users_id;
-// $data = [
-//    //入力されたオススメ度取得
-//         'rating' => Article::find($id),
-// 　 //入力されたコメント取得
-//         'comment' => Article::find($comment)
-//     ];
 
-//     return view('layout.g04_createComment', $data);
-// }
+    //g02→g03 コメント投稿用 フォーム表示
+    public function g03_editComment($id)
+    {
+        /*
+        $id =$req -> id;
+    $books_id =$req -> books_id;
+    $users_id =$req -> users_id;
+    $data = [
+    //入力されたオススメ度取得
+            'rating' => Article::find($id),
+    　 //入力されたコメント取得
+            'comment' => Article::find($comment)
+        ];
+        */
+
+
+    //Commentsテーブルから変数「comment」に１件取得
+    $data = [
+        'comment' => Comment::where('id', $id)->first()
+    ];
+
+        return view('layout.g03_editComment', $data);
+    }
 
 
 // //コメント投稿
@@ -186,3 +194,4 @@ class TopController extends Controller
 // }
 
 // }
+}

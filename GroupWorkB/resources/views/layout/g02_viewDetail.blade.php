@@ -60,11 +60,12 @@
         </select>
     </form>
     <table border="1">    
-        <tr><th>オススメ度</th><th>コメント</th></tr><br>
+        <tr><th>オススメ度</th><th>コメント</th><th></th></tr><br>
     @foreach($comments as $comment)
         <tr>
             <td>{{ $comment->rating }}</td>
             <td>{{ $comment->comment }}</td>
+            <td><a class="button-link" href="/layout/g03_editComment/{{ $comment->id }}">編集</a></td>
         </tr>
         @endforeach
     </table>
