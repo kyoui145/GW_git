@@ -32,25 +32,34 @@
             text-decoration: none; /* 下線なし */
             font-size: 16px; /* フォントサイズ */
         }
-        
-        /* ボタンっぽく見えるCSS */
+        /* 詳細が、ボタンっぽく見えるCSS */
         .button-link {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #007bff;
+            background-color: #83866C;
             border: none;
             border-radius: 5px;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
-        .button-link:hover {
-            background-color: #0056b3;
+        
+        /* テーブルを、画面中央に */
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* ビューポートの高さ */
         }
-        .button-link:active {
-            background-color: #004494;
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table td, table th {
+            border: 1px solid black;
+            padding: 10px;
         }
 
     </style>
@@ -115,15 +124,9 @@
         </script>
 <!-- ヘッダー(終わり) -->
 
-    <h1>アプリ名</h1>
-    <!-- ↓セッションの確認。そのうち消す -->
-     <p>{{ $username }}</p>
-     <p>{{ $password }}</p>
-     <p>{{ $role }}</p>
-     <!-- ↑セッションの確認。そのうち消す -->
+    <h1>ダミー</h1>
 
-
-    <table border="1">
+    <table border="1" class="table-container">
         <tr><th>画像</th><th>書籍名</th><th>著者</th><th>おすすめ度</th><th><!--詳細ボタンカラム--></th></tr>
         @foreach($records as $record)
         <tr>
