@@ -108,7 +108,12 @@
         <tr>
             <td><?php
                     // HTMLで画像を表示
-                    echo '<img src="' . htmlspecialchars($record->book_url) . '" alt="Image">';
+                    if($record->book_url === 'no data'){
+                       echo '<img src="{{asset(/img/noimagePic}}"  alt="助けて">';
+                    }else{
+                        echo '<img src="' . htmlspecialchars($record->book_url) . '" alt="Image">';
+                    }
+                    
                 ?>
             </td>
             <td>{{ $record->title }}</td>
