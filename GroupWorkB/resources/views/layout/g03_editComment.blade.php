@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>コメント編集画面</title>
+    <style>
+        body {
+            background-color: #FFFCF1;
+        }
+    </style>
 </head>
 <body>
     <h1>コメント編集画面</h1>
