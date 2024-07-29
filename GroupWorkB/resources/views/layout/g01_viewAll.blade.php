@@ -32,6 +32,27 @@
             text-decoration: none; /* 下線なし */
             font-size: 16px; /* フォントサイズ */
         }
+        
+        /* ボタンっぽく見えるCSS */
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+        .button-link:active {
+            background-color: #004494;
+        }
+
     </style>
     <title>Document</title>
 </head>
@@ -138,7 +159,8 @@
                 'author' => $record->author, 
                 'publisher' => $record->publisher,
                 'ISBN' => $record->ISBN,
-                ]) }}">詳細</a></td>
+                ]) }}"
+                class="button-link">詳細</a></td>
             <!-- <td><a class="button-link" href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> aタグはＧＥＴメソッドしか無理っぽい（idがＵＲＬに表示される）　　参考：https://note.com/liber_grp/n/n658fa8234519 -->
         </tr>
         @endforeach
