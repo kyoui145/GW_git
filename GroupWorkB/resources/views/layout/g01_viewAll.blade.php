@@ -32,7 +32,7 @@
             text-decoration: none; /* 下線なし */
             font-size: 16px; /* フォントサイズ */
         }
-        /* ボタンっぽく見えるCSS */
+        /* 詳細が、ボタンっぽく見えるCSS */
         .button-link {
             display: inline-block;
             padding: 10px 20px;
@@ -44,12 +44,6 @@
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s ease;
-        }
-        .button-link:hover {
-            background-color: #0056b3;
-        }
-        .button-link:active {
-            background-color: #004494;
         }
         
         /* テーブルを、画面中央に */
