@@ -23,6 +23,9 @@
     <br><br>
     <h1>コメント一覧</h1>
     <table border="1">
+    @if($comments->isEmpty())
+        <p>まだコメントはありません。</p>
+    @else
     <tr><th>オススメ度</th><th>コメント</th></tr><br>
     @foreach($comments as $comment)
         <tr>
@@ -30,7 +33,8 @@
             <td>{{ $comment->comment }}</td>
         </tr>
         @endforeach
-</table>
+    </table>
+    @endif
 <a href="/views/layout/g01_viewAll">戻る</a>
 </body>
 </html>
