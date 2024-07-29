@@ -21,3 +21,6 @@ Route::post('layout/regist', [TopController::class, 'store']);   //g22→g01 登
 Route::get('layout/returnG01', [TopController::class, 'returnG01']);   //g01画面に戻る遷移処理
 
 Route::get('layout/returnG21', [TopController::class, 'returnG21']);   //g21画面に戻る遷移処理
+
+Route::post('layout/g03_editComment', [TopController::class, 'g03_editComment']);   //g03→g04 コメント登録画面遷移処理
+Route::post('layout/g04_createComment', [TopController::class, 'g04_createComment']);   //g04 コメント登録処理
