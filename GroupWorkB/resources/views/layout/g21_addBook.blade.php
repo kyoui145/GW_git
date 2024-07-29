@@ -20,7 +20,7 @@
     crossorigin="anonymous">
     <style>body{width:800px; margin: 0 auto;}</style>
 </head>
-<form action="/db/store" method="post">
+<form action="/layout/registConfirm" method="post">
     @csrf
     <div>
         ISBN13：<input id="isbn" type="text" name="isbn" value="" autofocus>
@@ -47,6 +47,7 @@
     </div>
 <input type="submit" value="登録確認" crass="btn btn-primary">
 </form>
+<a href="/layout/returnG01">戻る</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
     crossorigin="anonymous"></script>
