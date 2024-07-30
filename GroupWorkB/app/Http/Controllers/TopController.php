@@ -217,10 +217,30 @@ class TopController extends Controller
     }
 
 
- //g02→g04　コメント新規登録処理
-public function postNewComment(Request $req)
+//g02→g04　コメント新規登録処理
+public function g04_createComment($id)
 {
-    return view('layout.g04_createComment');
+    $book = Book::where('id', $id)->firstOrFail(); // firstOrFailを使用してレコードが見つからない場合に404を返す
+
+    return view('layout.g04_createComment', ['book' => $book]);
+}
+//g04→02 コメント編集処理
+public function createComments(Request $req)
+{
+    // セッションからユーザーIDを取得
+//$userId = Comment::where('users_id',$req->users_id);
+
+
+     // 新しいコメントを作成
+$comment = new Comment;
+$comment->rating = $req->rating;
+$comment->comment = $req->comment;
+$comment->books_id = $req->books_id;
+$comment->users_id = $req->users_id; // セッションから取得したユーザIDを使用
+$comment->save();
+
+// 書籍詳細画面へリダイレクト
+return redirect()->route('layout.g02_viewDetail', ['id' => $req->books_id]);
 }
 
 //g02→g23 書籍削除画面移行
@@ -250,7 +270,7 @@ public function bookbel(Request $req){
         'author' => $req->author,   //著者名        Books:authoe
         'publisher' => $req->publisher      //出版社        Books:publisher
     ];
-    
+
     $data = [
         //'records' => Book::all()
          //ページ4個毎
@@ -260,5 +280,6 @@ public function bookbel(Request $req){
     return view('layout.g01_viewAll', $data);
 
     }
+
 
 }

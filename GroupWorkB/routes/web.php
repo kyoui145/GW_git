@@ -26,7 +26,9 @@ Route::get('layout/returnG21', [TopController::class, 'returnG21']);   //g21画�
 Route::get('layout/g03_editComment/{id}', [TopController::class, 'g03_editComment']);   //g02→g03 コメント編集画面遷移処理
 Route::post('layout/editComments', [TopController::class, 'editComments']);   //g02→g03 コメント編集画面遷移処理
 
-Route::get('layout/g04_createComment', [TopController::class, 'postNewComment']);   //g02→g04 コメント新規登録画面遷移処理
+Route::get('layout/g04_createComment/{id}', [TopController::class, 'g04_createComment']);   //g02→g04 コメント新規登録画面遷移処理
+Route::post('layout/createComments', [TopController::class, 'createComments']);   //g04→g02 コメント編集画面遷移処理
+Route::get('layout/g02_viewDetail/{id}', [TopController::class, 'g02_viewDetail']);  // 書籍詳細画面
 
 Route::get('layout/g23_deleteBook/{id}', [TopController::class, 'g23_deleteBook']);//g02→g23 書籍削除画面遷移処理
 Route::post('layout/bookbel', [TopController::class, 'bookbel']);
