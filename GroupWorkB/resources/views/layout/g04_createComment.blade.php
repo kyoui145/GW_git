@@ -24,6 +24,7 @@
             background-color: #FFFCF1;
         }
     </style>
+     <script src="{{ asset('/js/popsinko.js') }}" defer></script>
 </head>
 <body>
         <!-- ヘッダー -->
@@ -103,7 +104,7 @@
         <input type="hidden" name="books_id" id="books_id" value="{{ $book->id }}">
         <input type="hidden" name="users_id" id="users_id" value="{{ $userid }}"> <!-- セッションから取得する場合 -->
         <h2>上記のコメントを新規投稿しますか？</h2>
-        <input type="submit" value="コメント投稿" class="btn btn-primary">
+        <input type="submit" value="コメント投稿" class="btn btn-primary" id="btn4">
     </form>
     <a href="/layout/returnG02/{{ $book->id }}">詳細画面に戻る</a>
 </body>
