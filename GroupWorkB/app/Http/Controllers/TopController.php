@@ -224,7 +224,7 @@ public function g23_deleteBook($id)
             'book' => Book::where('id', $id)->first()
         ];
 
-        return view('g23_deleteBook', $data);
+        return view('layout.g23_deleteBook', $data);
     }
 
 //g23→g02　データベース削除処理
