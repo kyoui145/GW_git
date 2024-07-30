@@ -216,4 +216,19 @@ public function postNewComment(Request $req)
 {
     return view('layout.g04_createComment');
 }
+
+//g23→g02　データベース削除処理
+public function g23_deleteBook(Request $req){
+    $article->Article::find($req->id);
+    $article->delete();
+    $data = [
+        'isbn' => $req->isbn,               //ISBN番号      Books:isbn
+        'book_url' => $req->book_url,         //画像URL       Books:book_url
+        'title' => $req->title,       //書籍名        Books:title
+        'author' => $req->author,   //著者名        Books:authoe
+        'publisher' => $req->publisher      //出版社        Books:publisher
+    ];
+
+    return view('layout.g23_deleteBook',$data);
+}
 }
