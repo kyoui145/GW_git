@@ -217,6 +217,7 @@ public function postNewComment(Request $req)
     return view('layout.g04_createComment');
 }
 
+//g02→g23 書籍削除画面移行
 public function g23_deleteBook($id)
     {
         //Commentsテーブルから変数「comment」に１件取得
@@ -227,11 +228,12 @@ public function g23_deleteBook($id)
         return view('layout.g23_deleteBook', $data);
     }
 
-//g23→g02　データベース削除処理
+//g23→g01　データベース削除処理
 public function delete(Request $req){
     $article->Article::find($req->id);
     $article->delete();
     $data = [
+        
         'isbn' => $req->isbn,               //ISBN番号      Books:isbn
         'book_url' => $req->book_url,         //画像URL       Books:book_url
         'title' => $req->title,       //書籍名        Books:title
