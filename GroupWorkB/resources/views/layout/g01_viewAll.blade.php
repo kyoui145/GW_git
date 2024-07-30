@@ -160,11 +160,13 @@
                 'publisher' => $record->publisher,
                 'ISBN' => $record->ISBN,
                 ]) }}"
-                class="button-link">詳細</a></td>
+                　>詳細</a></td>
             <!-- <td><a class="button-link" href="/layout/bookDetail/{{ $record->id }}">詳細</a></td> aタグはＧＥＴメソッドしか無理っぽい（idがＵＲＬに表示される）　　参考：https://note.com/liber_grp/n/n658fa8234519 -->
         </tr>
         @endforeach
     </table>
+    <!-- 4個ずつ表示 -->
+    {{ $records -> links() }}
     <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する
     @if ($role === 2)
         <br><a href="/layout/registTrans" class="button-link2">新規登録</a>

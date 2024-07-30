@@ -33,7 +33,9 @@ class TopController extends Controller
 
             //Booksテーブルから変数「records」に全件取得
             $data = [
-                'records' => Book::all()
+                //'records' => Book::all()
+                //ページ4個毎
+                'records' => Book::paginate(2)
             ];
 
             return view('layout.g01_viewAll', $data);
@@ -114,7 +116,9 @@ class TopController extends Controller
     {
         //Booksテーブルから変数「records」に全件取得
         $data = [
-            'records' => Book::all()
+            //'records' => Book::all()
+             //ページ4個毎
+             'records' => Book::paginate(2)
         ];
 
         return view('layout.g01_viewAll', $data);
@@ -144,7 +148,9 @@ class TopController extends Controller
 
     //Booksテーブルから変数「records」に全件取得
     $data = [
-        'records' => Book::all()
+        //'records' => Book::all()
+         //ページ4個毎
+         'records' => Book::paginate(2)
     ];
 
     return view('layout.g01_viewAll', $data);
