@@ -221,7 +221,7 @@ public function g23_deleteBook($id)
     {
         //Commentsテーブルから変数「comment」に１件取得
         $data = [
-            'comment' => Comment::where('id', $id)->first()
+            'book' => Book::where('id', $id)->first()
         ];
 
         return view('g23_deleteBook', $data);
