@@ -12,11 +12,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background-color: #FFFCF1;
-        }
-    </style>
      <!-- Scripts -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="{{ asset('/js/book2.js') }}" defer></script>
@@ -24,10 +19,14 @@
     rel="stylesheet" 
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
     crossorigin="anonymous">
-    <style>body{width:800px; margin: 0 auto;}</style>
+    <style>
+        body{width:800px; margin: 0 auto;background-color: #FFFCF1;
+        }
+    </style>
 </head>
 <form action="/layout/registConfirm" method="post">
     @csrf
+        <h1>書籍のISBN(‐含む13桁)を入力してください</h1>
         <div>
             ISBN13：<input id="isbn" type="text" name="isbn" value="" autofocus>
             <button id="getBookInfo" class="btn btn-default">書籍情報取得</button>
