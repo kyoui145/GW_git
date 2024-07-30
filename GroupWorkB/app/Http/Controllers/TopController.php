@@ -275,8 +275,40 @@ $comment->books_id = $req->books_id;
 $comment->users_id = $req->users_id; // セッションから取得したユーザIDを使用
 $comment->save();
 
-// 書籍詳細画面へリダイレクト
-return redirect()->route('layout.g02_viewDetail', ['id' => $req->books_id]);
+//g02画面表示処理（ほぼg01→g02遷移処理）
+$record = Book::where('id', $req->books_id)->first();
+$comments = $record->comments;
+
+ // ソート条件を取得
+$sort = request('sort');
+
+// コメントをソート
+switch ($sort) {
+    case 'rating_desc':
+        $comments = $record->comments()->orderBy('rating', 'desc')->get();
+        break;
+    case 'rating_asc':
+        $comments = $record->comments()->orderBy('rating', 'asc')->get();
+        break;
+    case 'date_desc':
+        $comments = $record->comments()->orderBy('created_at', 'desc')->get();
+        break;
+    case 'date_asc':
+        $comments = $record->comments()->orderBy('created_at', 'asc')->get();
+        break;
+    default:
+        $comments = $record->comments()->get();
+        break;
+}
+
+    // 平均オススメ度を計算
+$avgRating = $comments->avg('rating');
+    
+return view('layout.g02_viewDetail', [
+    'record'=>$record,
+    'comments' => $comments,
+    'avgRating' => $avgRating,
+]);
 }
 
 //g02→g23 書籍削除画面移行
