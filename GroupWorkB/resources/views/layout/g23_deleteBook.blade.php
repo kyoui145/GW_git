@@ -27,8 +27,7 @@
         著者：<input id="author" type="text" name="author" value="{{$book->author}}" ><br>
         サムネイルURI：<input id="book_url" type="text" name="book_url" value="{{$book->book_url}}" ><br>
         <input type="submit" value="削除"><br>
-        <a href="layout/g02_viewDetail">書籍詳細へ戻る</a>
-
     </form>
+    <a href="/layout/returnG02/{{ $book->id }}">詳細画面に戻る</a>
 </body>
 </html>

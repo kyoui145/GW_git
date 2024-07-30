@@ -43,5 +43,6 @@
         <h2>上記のコメントを新規投稿しますか？</h2>
         <input type="submit" value="コメント投稿" class="btn btn-primary">
     </form>
+    <a href="/layout/returnG02/{{ $book->id }}">詳細画面に戻る</a>
 </body>
 </html>
