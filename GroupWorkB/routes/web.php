@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::post('layout/login', [TopController::class, 'login']);   //index→g01　ログイン処理
+Route::get('layout/login', [TopController::class, 'returnG01']);   //index→g01　ログイン処理ページネーション用
 
 Route::get('layout/bookDetail/{id}/{title}/{author}/{publisher}/{ISBN}', [TopController::class, 'bookDetail'])->name('bookDetail');   //g01→g02 詳細画面遷移処理
 
