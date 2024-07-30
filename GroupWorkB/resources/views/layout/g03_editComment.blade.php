@@ -41,5 +41,6 @@
             <input type="hidden" name="books_id" id="books_id" value="{{ $comment->books_id }}">    <!--Commentのbook_idは非表示で送信する-->
         <input type="submit" value="更新">
     </form>
+    <a href="/layout/returnG02/{{ $comment->books_id }}">詳細画面に戻る</a>
 </body>
 </html>

@@ -123,7 +123,43 @@ class TopController extends Controller
 
         return view('layout.g01_viewAll', $data);
     }
-    
+    //　""→g02 画面遷移処理(戻る)
+    public function returnG02($id)
+    {
+        //g02画面表示処理（ほぼg01→g02遷移処理）
+        $record = Book::where('id', $id)->first();
+        $comments = $record->comments;
+           // ソート条件を取得
+        $sort = request('sort');
+          // コメントをソート
+        switch ($sort) {
+            case 'rating_desc':
+                $comments = $record->comments()->orderBy('rating', 'desc')->get();
+                break;
+            case 'rating_asc':
+                $comments = $record->comments()->orderBy('rating', 'asc')->get();
+                break;
+            case 'date_desc':
+                $comments = $record->comments()->orderBy('created_at', 'desc')->get();
+                break;
+            case 'date_asc':
+                $comments = $record->comments()->orderBy('created_at', 'asc')->get();
+                break;
+            default:
+                $comments = $record->comments()->get();
+                break;
+        }
+ 
+            // 平均オススメ度を計算
+        $avgRating = $comments->avg('rating');
+             
+        return view('layout.g02_viewDetail', [
+            'record'=>$record,
+            'comments' => $comments,
+            'avgRating' => $avgRating,
+        ]);
+    }
+
     //　""→g21 画面遷移処理(戻る)
     public function returnG21(Request $req)
     {
