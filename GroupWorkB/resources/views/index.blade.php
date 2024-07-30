@@ -25,7 +25,7 @@
             @csrf
             <p　style="text-align: center;">図書館管理システム B</p>
             ユーザ名 ：<input type="text" name="username" style=" width:30%;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;" required><br>
-            パスワード：<input type="text" name="password" style=" width: 30%;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;" required><br>
+            パスワード：<input type="password" name="password" style=" width: 30%;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;" required><br>
             <input type="submit" value="ログイン" style="width: 30%;padding: 10px;background-color: #808080;color: #ffffff;border: none;border-radius: 4px;cursor: pointer;">
             <!-- 時間があれば追加機能で作る -->
             <!--<a href="">新規登録</a>-->
