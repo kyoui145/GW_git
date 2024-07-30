@@ -72,12 +72,16 @@
         <tr>
             <td>{{ $comment->rating }}</td>
             <td>{{ $comment->comment }}</td>
+            @if ($comment->users_id == $userid)  <!--コメントは自分で入力したもののみ、修正できる-->
             <td><a class="button-link" href="/layout/g03_editComment/{{ $comment->id }}">編集</a></td>
+            @else
+            <td></td>
+            @endif
         </tr>
-        @endforeach
+    @endforeach
     </table>
     @endif
-    <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
+    <!--ログインユーザが総務部の場合、書籍削除ボタンを追加する-->
     @if ($role === 2)
         <br><a href="/layout/g23_deleteBook/{{$record->id}}">書籍削除（仮リンク、一覧表示へ戻る）</a><br>
     @endif
