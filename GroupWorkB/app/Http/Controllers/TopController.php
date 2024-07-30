@@ -217,8 +217,18 @@ public function postNewComment(Request $req)
     return view('layout.g04_createComment');
 }
 
+public function g23_deleteBook($id)
+    {
+        //Commentsテーブルから変数「comment」に１件取得
+        $data = [
+            'comment' => Comment::where('id', $id)->first()
+        ];
+
+        return view('g23_deleteBook', $data);
+    }
+
 //g23→g02　データベース削除処理
-public function g23_deleteBook(Request $req){
+public function delete(Request $req){
     $article->Article::find($req->id);
     $article->delete();
     $data = [
