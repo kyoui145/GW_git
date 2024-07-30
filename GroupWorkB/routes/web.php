@@ -27,4 +27,4 @@ Route::post('layout/editComments', [TopController::class, 'editComments']);   //
 
 Route::get('layout/g04_createComment', [TopController::class, 'postNewComment']);   //g02→g04 コメント新規登録画面遷移処理
 
-Route::post('layout/g23_deleteBook/{id}', [TopController::class, 'g23_deleteBook.blade']);   //g02→g23 書籍削除画面遷移処理
+Route::get('layout/g23_deleteBook/{id}', [TopController::class, 'g23_deleteBook']);   //g02→g23 書籍削除画面遷移処理
