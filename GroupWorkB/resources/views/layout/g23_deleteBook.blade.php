@@ -84,11 +84,14 @@
     <h1>ダミー</h1>
     <form action="/layout/bookbel" method="post">
         @csrf
-        <input type="text" name="id" value="{{$book->id}}" readonly><br>
+        <input type="hidden" name="id" value="{{$book->id}}" readonly><br>
         書籍名：<input id="title" type="text" name="title" value="{{$book->title}}"><br>
         出版社：<input id="publisher" type="text" name="publisher" value="{{$book->publisher}}" ><br>
         著者：<input id="author" type="text" name="author" value="{{$book->author}}" ><br>
         サムネイルURI：<input id="book_url" type="text" name="book_url" value="{{$book->book_url}}" ><br>
+        <br>
+        <br>
+        <h2>上記の情報を削除しますか？</h2>
         <input type="submit" value="削除" id="btn2"><br>
     </form>
     <a href="/layout/returnG02/{{ $book->id }}">詳細画面に戻る</a>
