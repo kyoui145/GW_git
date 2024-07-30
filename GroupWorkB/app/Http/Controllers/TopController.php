@@ -250,7 +250,15 @@ public function bookbel(Request $req){
         'author' => $req->author,   //著者名        Books:authoe
         'publisher' => $req->publisher      //出版社        Books:publisher
     ];
+    
+    $data = [
+        //'records' => Book::all()
+         //ページ4個毎
+         'records' => Book::paginate(4)
+    ];
 
-    return view('index',$data);
-}
+    return view('layout.g01_viewAll', $data);
+
+    }
+
 }
