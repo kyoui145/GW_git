@@ -238,6 +238,8 @@ public function g23_deleteBook($id)
 
 
 public function bookbel(Request $req){
+    $comment= Comment::where('books_id',$req->id);
+    $comment->delete();
     $book= Book::find($req->id);
     $book->delete();
     $data = [

@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <form action="/layout/bookdel" method="post">
+    <form action="/layout/bookbel" method="post">
         @csrf
         <input type="text" name="id" value="{{$book->id}}" readonly><br>
         書籍名：<input id="title" type="text" name="title" value="{{$book->title}}"><br>
