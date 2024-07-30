@@ -235,11 +235,13 @@ public function g23_deleteBook($id)
     }
 
 //g23→g01　データベース削除処理
-public function delete(Request $req){
-    $article->Article::find($req->id);
-    $article->delete();
+
+
+public function bookbel(Request $req){
+    $book= Book::find($req->id);
+    $book->delete();
     $data = [
-        
+
         'isbn' => $req->isbn,               //ISBN番号      Books:isbn
         'book_url' => $req->book_url,         //画像URL       Books:book_url
         'title' => $req->title,       //書籍名        Books:title
@@ -247,6 +249,6 @@ public function delete(Request $req){
         'publisher' => $req->publisher      //出版社        Books:publisher
     ];
 
-    return view('layout.g23_deleteBook',$data);
+    return view('index',$data);
 }
 }
