@@ -22,11 +22,35 @@
     <style>
         body{width:800px; margin: 0 auto;background-color: #FFFCF1;
         }
+        .btn-default {
+            display: inline-block;
+            background-color: #738581; /* ボタンの背景色 */
+            color: white; /* 文字色 */
+            padding: 2px 20px; /* パディング */
+            border: none; /* ボーダーなし */
+            border-radius: 5px; /* 角を丸く */
+            text-align: center; /* 中央揃え */
+            text-decoration: none; /* 下線なし */
+            font-size: 16px; /* フォントサイズ */
+        }
+        /* 書籍詳細情報が、ボタンっぽく見えるCSS */
+        .btn-default {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #94c4d4;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
     </style>
 </head>
 <form action="/layout/registConfirm" method="post">
     @csrf
-        <h1>書籍のISBN(‐含む13桁)を入力してください</h1>
+        <h1>ISBN(‐含む13桁)が分かる場合は、入力してください</h1>
         <div>
             ISBN13：<input id="isbn" type="text" name="isbn" value="" autofocus>
             <button id="getBookInfo" class="btn btn-default">書籍情報取得</button>
