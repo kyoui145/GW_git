@@ -118,7 +118,7 @@ class TopController extends Controller
         $data = [
             //'records' => Book::all()
              //ページ4個毎
-             'records' => Book::paginate(3)
+             'records' => Book::paginate(4)
         ];
 
         return view('layout.g01_viewAll', $data);
@@ -150,7 +150,7 @@ class TopController extends Controller
     $data = [
         //'records' => Book::all()
          //ページ4個毎
-         'records' => Book::paginate(3)
+         'records' => Book::paginate(4)
     ];
 
     return view('layout.g01_viewAll', $data);
