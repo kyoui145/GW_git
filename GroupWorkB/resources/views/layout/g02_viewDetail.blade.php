@@ -79,7 +79,7 @@
     @endif
     <!--ログインユーザが総務部の場合、書籍登録ボタンを追加する-->
     @if ($role === 2)
-        <br><a href="/layout/returnG01">書籍削除（仮リンク、一覧表示へ戻る）</a><br>
+        <br><a href="/layout/g23_deleteBook/{{$record->id}}">書籍削除（仮リンク、一覧表示へ戻る）</a><br>
     @endif
 
     <a href="/layout/g04_createComment">コメント投稿</a><br>
