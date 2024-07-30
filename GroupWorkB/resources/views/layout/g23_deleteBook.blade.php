@@ -1,3 +1,11 @@
+<?php
+    //セッションから情報取得
+    $userid = session('userid');
+    $username = session('username');
+    $password = session('password');
+    $role = session('role');
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
